@@ -3,13 +3,11 @@ package VideoGameDBTests;
 import VideoGameDBTestsConfig.TestConfig;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.junit.Test;
 import org.json.simple.parser.ParseException;
+import org.junit.Test;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import static VideoGameDBTestsConfig.VideoGamesEndPoint.ENDPOINT;
 import static io.restassured.RestAssured.given;
