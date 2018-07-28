@@ -17,6 +17,7 @@ public class GetTests extends TestConfig{
         when()
                 .get(ENDPOINT).
         then()
+                .log().all()
                 .assertThat().body("id", hasItem(1));
     }
 }
