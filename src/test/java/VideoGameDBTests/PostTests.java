@@ -18,7 +18,7 @@ import static io.restassured.RestAssured.given;
 public class PostTests extends TestConfig {
 
     public Object getJsonObject() {
-        String fileName = "C:\\Users\\Jabels\\IdeaProjects\\Restassuredtests\\src\\test\\recources\\VideoGameJson.json";
+        String fileName = "C:\\Users\\Jaybe\\IdeaProjects\\Restassuredtests\\src\\test\\resources\\VideoGameJson.json";
         JSONParser parser = new JSONParser();
         JSONObject videoGame = null;
         try{
