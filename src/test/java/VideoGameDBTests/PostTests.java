@@ -1,6 +1,9 @@
 package VideoGameDBTests;
 
 import VideoGameDBTestsConfig.TestConfig;
+import VideoGameDBTestsConfig.VideoGame;
+import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.specification.ResponseSpecification;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -41,6 +44,15 @@ public class PostTests extends TestConfig {
                 .log().all();
     }
 
+    public void deleteVideoGameByGameId(String gameId) {
+        given().
+                spec(videoGameJsonRequestSpec).
+        when().
+                delete(ENDPOINT + "/" + gameId).
+        then().
+                log().all();
+    }
+
     @Test
     public void createNewVideoGameByJSON() {
 
@@ -53,6 +65,26 @@ public class PostTests extends TestConfig {
                 .log().all();
 
         deleteCreatedVideoGameByJson();
+    }
 
+    @Test
+    public void testVideoGameSerialisationByJSON() {
+        ResponseSpecification customResponse = new ResponseSpecBuilder()
+                .expectStatusCode(500).build();
+
+        VideoGame videoGame =
+                new VideoGame("300", "RPG", "2000-01-01",
+                        "World of Warcraft", "12+", "100");
+
+        given().
+                spec(videoGameJsonRequestSpec).
+                body(videoGame).
+        when().
+                post(ENDPOINT).
+        then().
+                log().all();
+
+        String videoGameId = videoGame.getId();
+        deleteVideoGameByGameId(videoGameId);
     }
 }

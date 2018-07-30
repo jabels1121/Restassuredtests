@@ -4,10 +4,10 @@ import VideoGameDBTestsConfig.TestConfig;
 import io.restassured.http.ContentType;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.junit.Test;
+
+import java.util.List;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.everyItem;
@@ -79,5 +79,34 @@ public class GetTests extends TestConfig {
         String contentType = response.getHeader("Content-Type");
 
         System.out.println(contentType);
+    }
+
+    @Test
+    public void extractFirstTeamName() {
+        String firstTeamName =
+                given().
+                        spec(footbalApiJsonRequestSpec).
+                when().
+                        get("competitions/426/teams").
+                jsonPath().getString("teams.name[0]");
+
+        System.out.println(firstTeamName);
+    }
+
+    @Test
+    public void extractAllTeamsName() {
+        Response response =
+                given().
+                        spec(footbalApiJsonRequestSpec).
+                when().
+                        get("competitions/426/teams").
+                then().
+                        contentType(ContentType.JSON).
+                        extract().response();
+
+        List<String> allTeamsName = response.jsonPath().getList("teams.name");
+        for (String s : allTeamsName) {
+            System.out.println(s);
+        }
     }
 }
