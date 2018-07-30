@@ -1,6 +1,9 @@
 package VideoGameDBTests;
 
 import VideoGameDBTestsConfig.TestConfig;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.json.simple.parser.JSONParser;
 import org.junit.Test;
 
 import static VideoGameDBTestsConfig.VideoGamesEndPoint.ENDPOINT;
@@ -45,4 +48,16 @@ public class GetTests extends TestConfig{
                 assertThat().body("id", is(5));
     }
 
+    @Test
+    public void checkTheResponseBodyIsJson() {
+        Response response =
+                given().
+                        spec(videoGameJsonRequestSpec).
+                when().
+                        get(ENDPOINT).
+                then().
+                        contentType(ContentType.JSON).
+                        extract().response();
+
+    }
 }
