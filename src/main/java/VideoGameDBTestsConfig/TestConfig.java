@@ -34,6 +34,15 @@ public class TestConfig {
                 addHeader("Content-type", "application/xml").
                 build();
 
+        footbalApiJsonRequestSpec = new RequestSpecBuilder().
+                setBaseUri("http://api.football-data.org").
+                setBasePath("/v1/").
+                addHeader("X-Auth-Token", "c97b760003f04ab19fdb234a6ea95ef9").
+                setProxy(8888).
+                addHeader("X-Response-Control", "minified").
+                build();
+
+
         responseSpec = new ResponseSpecBuilder().
                 expectStatusCode(200).
                 build();
