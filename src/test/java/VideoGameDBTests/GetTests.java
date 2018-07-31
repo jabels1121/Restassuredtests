@@ -66,7 +66,8 @@ public class GetTests extends TestConfig{
 
     @Test
     public void testVideoGameSchemaXML() {
-        File xsdSchema = new File("C:\\Users\\Jaybe\\IdeaProjects\\Restassuredtests\\src\\main\\java\\resources\\VideoGame.xsd");
+        File xsdSchema =
+                new File("C:\\Users\\Jaybe\\IdeaProjects\\Restassuredtests\\src\\main\\java\\resources\\VideoGame.xsd");
         given().
                 spec(videoGameXMLRequestSpec).
                 pathParam("videoGameId", 5).
@@ -78,7 +79,8 @@ public class GetTests extends TestConfig{
 
     @Test
     public void testVideoGameSchemaJSON() {
-        File jsonSchema = new File("C:\\Users\\Jaybe\\IdeaProjects\\Restassuredtests\\src\\main\\java\\resources\\VideoGameJsonSchema.json");
+        File jsonSchema =
+                new File("C:\\Users\\Jaybe\\IdeaProjects\\Restassuredtests\\src\\main\\java\\resources\\VideoGameJsonSchema.json");
         given().
                 spec(videoGameJsonRequestSpec).
                 pathParam("videoGameId", 5).
