@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="361f304d-6a42-405b-bb61-33bbe0d74e84" name="Default Changelist" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/VideoGameDBTestsConfig/VideoGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/VideoGameDBTestsConfig/VideoGame.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/FootballApiTests.GetTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-FootballApiTests.GetTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-VideoGameDBTests.GetTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-VideoGameDBTests.PostTests.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/VideoGameDBTests.GetTests.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/surefire-reports/VideoGameDBTests.PostTests.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FootballApiTests/GetTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FootballApiTests/GetTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/VideoGameDBTests/PostTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VideoGameDBTests/PostTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/FootballApiTests/GetTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FootballApiTests/GetTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/VideoGameDBTests/PostTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/VideoGameDBTests/PostTests.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +30,7 @@
           <entry key="java" value="13" />
           <entry key="json" value="2" />
           <entry key="txt" value="1" />
-          <entry key="xml" value="4" />
+          <entry key="xml" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -57,7 +39,7 @@
           <entry key="JAVA" value="13" />
           <entry key="JSON" value="2" />
           <entry key="PLAIN_TEXT" value="3" />
-          <entry key="XML" value="4" />
+          <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -93,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/VideoGameDBTests/PostTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1035">
+            <state relative-caret-position="290">
               <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -133,6 +115,11 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/VideoGameDBTestsConfig/VideoGame.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-45">
@@ -163,15 +150,6 @@
                 <element signature="e#1131#1132#0" expanded="true" />
                 <element signature="e#1177#1178#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/VideoGameDBTests/DeleteTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -347,7 +325,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532961720540" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533024616909" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -516,9 +494,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23489933" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23489933" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -534,7 +511,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32907802" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.37677053" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32765958" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -818,13 +795,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/VideoGameDBTests/PostTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1035">
+        <state relative-caret-position="290">
           <caret line="69" column="9" lean-forward="true" selection-start-line="69" selection-start-column="9" selection-end-line="69" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
