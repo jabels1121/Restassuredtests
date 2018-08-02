@@ -3,6 +3,7 @@ package VideoGameDBTests;
 import VideoGameDBTestsConfig.TestConfig;
 import VideoGameDBTestsConfig.VideoGame;
 import io.restassured.builder.ResponseSpecBuilder;
+import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -11,14 +12,17 @@ import org.junit.Test;
 
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 
 import static VideoGameDBTestsConfig.VideoGamesEndPoint.ENDPOINT;
+import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 
 public class PostTests extends TestConfig {
 
     public Object getJsonObject() {
-        String fileName = "C:\\Users\\Jaybe\\IdeaProjects\\Restassuredtests\\src\\test\\resources\\VideoGameJson.json";
+        String fileName = "C:\\Users\\Jabels\\IdeaProjects\\Restassuredtests\\src\\test\\resources\\VideoGameJson.json";
         JSONParser parser = new JSONParser();
         JSONObject videoGame = null;
         try{
@@ -76,6 +80,8 @@ public class PostTests extends TestConfig {
                 new VideoGame("300", "RPG", "2000-01-01",
                         "World of Warcraft", "12+", "100");
 
+        checkTheVideoGameAndDeletedBeforePost(videoGame.getName());
+
         given().
                 spec(videoGameJsonRequestSpec).
                 body(videoGame).
@@ -86,5 +92,23 @@ public class PostTests extends TestConfig {
 
         String videoGameId = videoGame.getId();
         deleteVideoGameByGameId(videoGameId);
+    }
+
+    public void checkTheVideoGameAndDeletedBeforePost(String videoGameName) {
+
+        Response response = given().spec(videoGameJsonRequestSpec).when().get(ENDPOINT);
+        String videoGameId;
+
+        Map<String, ?> allVideoGames = response.path(
+                "find { it.name == '%s' }", videoGameName
+        );
+
+        if (allVideoGames != null) {
+            videoGameId = allVideoGames.get("id").toString();
+            deleteVideoGameByGameId(videoGameId);
+        }
+
+
+
     }
 }
