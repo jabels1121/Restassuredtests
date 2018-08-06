@@ -13,7 +13,7 @@ public class TestConfig {
 
     public static RequestSpecification videoGameJsonRequestSpec;
     public static RequestSpecification videoGameXMLRequestSpec;
-    public static RequestSpecification footbalApiJsonRequestSpec;
+    public static RequestSpecification footballApiJsonRequestSpec;
     public static ResponseSpecification responseSpec;
 
     @BeforeClass
@@ -36,7 +36,7 @@ public class TestConfig {
                 addHeader("Content-type", "application/xml").
                 build();
 
-        footbalApiJsonRequestSpec = new RequestSpecBuilder().
+        footballApiJsonRequestSpec = new RequestSpecBuilder().
                 setBaseUri("http://api.football-data.org").
                 setBasePath("/v1/").
                 addHeader("X-Auth-Token", "c97b760003f04ab19fdb234a6ea95ef9").

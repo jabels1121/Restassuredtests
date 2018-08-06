@@ -3,7 +3,6 @@ package FootballApiTests;
 import VideoGameDBTestsConfig.TestConfig;
 import io.restassured.response.Response;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.junit.Test;
 
 import java.util.List;
@@ -16,7 +15,7 @@ public class GPathJSONTests extends TestConfig {
     @Test
     public void extractAllPlayerDataWithFind() {
 
-        Response response = given().spec(footbalApiJsonRequestSpec).when().get("teams/1/players");
+        Response response = given().spec(footballApiJsonRequestSpec).when().get("teams/1/players");
 
         Map<String, ?> singlePlayerData = response.path("players.find { it.jerseyNumber == 39 }");
 
@@ -30,7 +29,7 @@ public class GPathJSONTests extends TestConfig {
         JSONObject jsonObject = new JSONObject();
 
 
-        Response response = given().spec(footbalApiJsonRequestSpec).when().get("teams/1/players");
+        Response response = given().spec(footballApiJsonRequestSpec).when().get("teams/1/players");
 
         List<Map<String, ?>> allPlayers = response.path(
                 "players"
@@ -51,7 +50,7 @@ public class GPathJSONTests extends TestConfig {
         String position = "Centre-Back";
         String nationality = "England";
 
-        Response response = given().spec(footbalApiJsonRequestSpec).when().get("teams/66/players");
+        Response response = given().spec(footballApiJsonRequestSpec).when().get("teams/66/players");
 
         Map<String, ?> playerOfCertainPositionAndCountry = response.path(
                 "players.findAll { it.position == '%s' }.find { it.nationality == '%s' }"
@@ -68,7 +67,7 @@ public class GPathJSONTests extends TestConfig {
 
         String nationality = "England";
 
-        Response response = given().spec(footbalApiJsonRequestSpec).when().get("teams/66/players");
+        Response response = given().spec(footballApiJsonRequestSpec).when().get("teams/66/players");
 
         List<Map<String, Object>> allPlayersCertainNation = response.path(
                 "players.findAll { it.nationality == '%s' }", nationality);

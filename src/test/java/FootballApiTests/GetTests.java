@@ -18,7 +18,7 @@ public class GetTests extends TestConfig {
     @Test
     public void getAllCompetitionsOneSeason() {
         given().
-                spec(footbalApiJsonRequestSpec).
+                spec(footballApiJsonRequestSpec).
                 queryParam("season", 2016).
         when().
                 get("competitions/").
@@ -31,7 +31,7 @@ public class GetTests extends TestConfig {
     @Test
     public void checkTeamsCountByOneComp() {
         given().
-                spec(footbalApiJsonRequestSpec).
+                spec(footballApiJsonRequestSpec).
         when()
                 .get("competitions/426/teams").
         then()
@@ -42,7 +42,7 @@ public class GetTests extends TestConfig {
     @Test
     public void checkTheFirstNameTeamByOneComp() {
         given().
-                spec(footbalApiJsonRequestSpec).
+                spec(footballApiJsonRequestSpec).
         when()
                 .get("competitions/426/teams").
         then()
@@ -54,7 +54,7 @@ public class GetTests extends TestConfig {
     public void getAllTeamData_DoCheckFirst() throws ParseException {
         Response response =
                 given().
-                        spec(footbalApiJsonRequestSpec).
+                        spec(footballApiJsonRequestSpec).
                 when().
                         get("competitions/426/teams").
                 then().
@@ -68,7 +68,7 @@ public class GetTests extends TestConfig {
     public void extractResponseHeaders() {
         Response response =
                 given().
-                        spec(footbalApiJsonRequestSpec).
+                        spec(footballApiJsonRequestSpec).
                 when().
                         get("competitions/426/teams").
                 then().
@@ -85,7 +85,7 @@ public class GetTests extends TestConfig {
     public void extractFirstTeamName() {
         String firstTeamName =
                 given().
-                        spec(footbalApiJsonRequestSpec).
+                        spec(footballApiJsonRequestSpec).
                 when().
                         get("competitions/426/teams").
                 jsonPath().getString("teams.name[0]");
@@ -97,7 +97,7 @@ public class GetTests extends TestConfig {
     public void extractAllTeamsName() {
         Response response =
                 given().
-                        spec(footbalApiJsonRequestSpec).
+                        spec(footballApiJsonRequestSpec).
                 when().
                         get("competitions/426/teams").
                 then().

@@ -53,7 +53,7 @@ public class GetTests extends TestConfig{
 
     @Test
     public void checkTheResponseBodyIsJson() {
-        Response response =
+        /*Response response =
                 given().
                         spec(videoGameJsonRequestSpec).
                 when().
@@ -61,6 +61,13 @@ public class GetTests extends TestConfig{
                 then().
                         contentType(ContentType.JSON).
                         extract().response();
+        */
+        given().
+                spec(videoGameJsonRequestSpec).
+        when().
+                get(ENDPOINT).
+        then().
+                assertThat().contentType(ContentType.JSON);
 
     }
 

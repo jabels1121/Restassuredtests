@@ -2,9 +2,7 @@ package VideoGameDBTests;
 
 import VideoGameDBTestsConfig.TestConfig;
 import VideoGameDBTestsConfig.VideoGame;
-import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.response.Response;
-import io.restassured.specification.ResponseSpecification;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -12,11 +10,9 @@ import org.junit.Test;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
 
 import static VideoGameDBTestsConfig.VideoGamesEndPoint.ENDPOINT;
-import static io.restassured.RestAssured.get;
 import static io.restassured.RestAssured.given;
 
 public class PostTests extends TestConfig {
@@ -73,8 +69,6 @@ public class PostTests extends TestConfig {
 
     @Test
     public void testVideoGameSerialisationByJSON() {
-        ResponseSpecification customResponse = new ResponseSpecBuilder()
-                .expectStatusCode(500).build();
 
         VideoGame videoGame =
                 new VideoGame("300", "RPG", "2000-01-01",
@@ -100,8 +94,7 @@ public class PostTests extends TestConfig {
         String videoGameId;
 
         Map<String, ?> allVideoGames = response.path(
-                "find { it.name == '%s' }", videoGameName
-        );
+                "find { it.name == '%s' }", videoGameName);
 
         if (allVideoGames != null) {
             videoGameId = allVideoGames.get("id").toString();
